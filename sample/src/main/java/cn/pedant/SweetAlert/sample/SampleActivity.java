@@ -72,10 +72,10 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.warning_cancel_test:
                 new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText("Are you sure?")
-                        .setContentText("Won't be able to recover this file!")
-                        .setCancelText("No,cancel plx!")
-                        .setConfirmText("Yes,delete it!")
+                        .setTitleText("مطمئنی؟")
+                        .setContentText("محتوی")
+                        .setCancelText("بی خیال")
+                        .setConfirmText("انجامش بده")
                         .showCancelButton(true)
                         .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override

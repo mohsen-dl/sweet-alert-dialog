@@ -3,6 +3,7 @@ package cn.pedant.SweetAlert;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.pnikosis.materialishprogress.ProgressWheel;
 import java.util.List;
 
 public class SweetAlertDialog extends Dialog implements View.OnClickListener {
+    Context _context;
     private View mDialogView;
     private AnimationSet mModalInAnim;
     private AnimationSet mModalOutAnim;
@@ -69,10 +71,12 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
 
     public SweetAlertDialog(Context context) {
         this(context, NORMAL_TYPE);
+        _context = this.getContext();
     }
 
     public SweetAlertDialog(Context context, int alertType) {
         super(context, R.style.alert_dialog);
+        _context = this.getContext();
         setCancelable(true);
         setCanceledOnTouchOutside(false);
         mProgressHelper = new ProgressHelper(context);
@@ -138,10 +142,12 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alert_dialog);
-
+        _context = this.getContext();
         mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
         mTitleTextView = (TextView)findViewById(R.id.title_text);
+        mTitleTextView.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
         mContentTextView = (TextView)findViewById(R.id.content_text);
+        mContentTextView.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
         mErrorFrame = (FrameLayout)findViewById(R.id.error_frame);
         mErrorX = (ImageView)mErrorFrame.findViewById(R.id.error_x);
         mSuccessFrame = (FrameLayout)findViewById(R.id.success_frame);
@@ -152,7 +158,9 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mCustomImage = (ImageView)findViewById(R.id.custom_image);
         mWarningFrame = (FrameLayout)findViewById(R.id.warning_frame);
         mConfirmButton = (Button)findViewById(R.id.confirm_button);
+        mConfirmButton.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
         mCancelButton = (Button)findViewById(R.id.cancel_button);
+        mCancelButton.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
         mProgressHelper.setProgressWheel((ProgressWheel)findViewById(R.id.progressWheel));
         mConfirmButton.setOnClickListener(this);
         mCancelButton.setOnClickListener(this);
@@ -378,5 +386,10 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
 
     public ProgressHelper getProgressHelper () {
         return mProgressHelper;
+    }
+
+    private Typeface GetTypeFace(String fontName){
+        Typeface face = Typeface.createFromAsset(_context.getAssets(), "fonts/" + fontName);
+        return face;
     }
 }
