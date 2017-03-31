@@ -315,6 +315,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         if (mCancelButton != null && mCancelText != null) {
             showCancelButton(true);
             mCancelButton.setText(mCancelText);
+            mCancelButton.setTypeface(GetTypeFace("IRANSansWeb(FaNum)_Medium.ttf"));
         }
         return this;
     }
@@ -327,6 +328,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mConfirmText = text;
         if (mConfirmButton != null && mConfirmText != null) {
             mConfirmButton.setText(mConfirmText);
+            mConfirmButton.setTypeface(GetTypeFace("IRANSansWeb(FaNum)_Medium.ttf"));
         }
         return this;
     }
