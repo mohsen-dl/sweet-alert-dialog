@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">SweetAlertDialog</string>
     <string name="dialog_default_title">Here\'s a message!</string>
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">خب</string>
+    <string name="dialog_cancel">بی خیال</string>
     <string name="LOADING">Loading...</string>
 </resources>

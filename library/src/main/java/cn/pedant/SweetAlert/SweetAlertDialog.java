@@ -145,9 +145,9 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         _context = this.getContext();
         mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
         mTitleTextView = (TextView)findViewById(R.id.title_text);
-        mTitleTextView.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
+        mTitleTextView.setTypeface(GetTypeFace("IRANSansWeb(FaNum)_Medium.ttf"));
         mContentTextView = (TextView)findViewById(R.id.content_text);
-        mContentTextView.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
+        mContentTextView.setTypeface(GetTypeFace("IRANSansWeb(FaNum)_Medium.ttf"));
         mErrorFrame = (FrameLayout)findViewById(R.id.error_frame);
         mErrorX = (ImageView)mErrorFrame.findViewById(R.id.error_x);
         mSuccessFrame = (FrameLayout)findViewById(R.id.success_frame);
@@ -158,9 +158,9 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mCustomImage = (ImageView)findViewById(R.id.custom_image);
         mWarningFrame = (FrameLayout)findViewById(R.id.warning_frame);
         mConfirmButton = (Button)findViewById(R.id.confirm_button);
-        mConfirmButton.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
+        mConfirmButton.setTypeface(GetTypeFace("IRANSansWeb(FaNum)_Medium.ttf"));
         mCancelButton = (Button)findViewById(R.id.cancel_button);
-        mCancelButton.setTypeface(GetTypeFace("IRANSansWeb_Medium.ttf"));
+        mCancelButton.setTypeface(GetTypeFace("IRANSansWeb(FaNum)_Medium.ttf"));
         mProgressHelper.setProgressWheel((ProgressWheel)findViewById(R.id.progressWheel));
         mConfirmButton.setOnClickListener(this);
         mCancelButton.setOnClickListener(this);
